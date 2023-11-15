@@ -43,9 +43,10 @@ $avant-light: 'Avant Garde Light';
 $body-font: 'Arial';
 $body-font-bold: 'Arial Bold';
 
-$color-blue: #00A5AA;
+$color-blue: #00005a;
 $color-red: #E3000B;
-$color-lightblue: #E8FFF5;
+$color-lightblue: #1961ac;
+$color-lighterblue: #16cbe2;
 $color-orange: #f07d22;
 $color-green: #42b284;
 $color-purple: #6f1e82;
@@ -75,6 +76,10 @@ main {
 	height: auto;
 	position: relative;
 	overflow: hidden;
+}
+
+strong {
+  font-family: $avant-bold;
 }
 
 .banner {
@@ -165,7 +170,15 @@ main {
 	height: auto;
 	position: relative;
 	padding: 3rem 0;
-	background-color: $color-brown;
+	background-color: $color-blue;
+
+  &.light-blue {
+    background-color: $color-lightblue;
+  }
+
+  a {
+    color: $color-white;
+  }
 
 	&-text {
 		color: #fff;
@@ -472,22 +485,25 @@ main {
 		margin: 0 auto;
 	}
 	&-lead {
-		margin-bottom: 2.5rem;
-		font-family: $avant-light;
-		color: #000;
-		margin-bottom: 2.5rem;
+		font-family: $avant-demi;
+		color: $color-blue;
+		margin-bottom: 20px;
 		font-size: 32px;
 		text-align: center;
+
+    span {
+      color: $color-lightblue;
+    }
+
 		@media(min-width: 768px){
 			font-size: 45px;
 		}
 		@media(min-width: 992px){
 			font-size: 50px;
-			margin-bottom: 3.5rem;
 		}
 
 		strong {
-			font-family: $avant-demi;
+			font-family: $avant-bold;
 		}
 	}
 	&-sublead {
@@ -497,6 +513,7 @@ main {
 		font-size: 23px;
 		padding-left: 15px;
 		padding-right: 15px;
+    color: $color-blue;
 
 		@media(min-width: 768px){
 			padding-left: 0;
@@ -571,15 +588,24 @@ main {
 	}
 }
 
+.big-image {
+  height: 80vh;
+  max-height: 800px;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
 .stats {
-	background-color: #EDEEF0;
+	background-color: #e8f8fb;
 	width: 100%;
 	height: auto;
 	position: relative;
 	padding: 3.5rem 0 0.5rem 0;
 	&-title {
-		font-family: $avant-demi;
-		color: #000;
+		font-family: $avant-bold;
+		color: $color-lighterblue;
+    font-weight: bolder;
 		margin-bottom: 2.5rem;
 		text-align: center;
 		@media(min-width: 992px){
@@ -595,100 +621,6 @@ main {
 		@media(min-width: 768px){
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-		}
-	}
-
-	[data-aos="bead-one"] {
-		&.aos-animate {
-			@media(min-width: 992px){
-				animation: beadOne 1s forwards 0s;
-			}
-		}
-	}
-
-	@keyframes beadOne {
-		0% {
-			transform: rotate(-90deg);
-			right: 150%;
-			opacity: 0;
-		}
-		100% {
-			transform: rotate(0deg);
-			right: 100%;
-			opacity: 1;
-		}
-	}
-
-	&-beadone {
-		position: absolute;
-		right: 90%;
-		top: -65px;
-		width: 20px;
-		display: none;
-
-		@media(min-width: 768px){
-			right: 100%;
-			top: 60%;
-			width: 40px;
-			display: block;
-		}
-		@media(min-width: 992px){
-			right: 100%;
-			top: 60%;
-			width: 40px;
-			opacity: 0;
-		}
-
-		img {
-			width: 100%;
-			object-fit: contain;
-		}
-
-	}
-
-	[data-aos="bead-two"] {
-		&.aos-animate {
-			@media(min-width: 992px){
-				animation: beadTwo 1s forwards 0.5s;
-			}
-		}
-	}
-
-	@keyframes beadTwo {
-		0% {
-			transform: rotate(-90deg);
-			right: 160%;
-			opacity: 0;
-		}
-		100% {
-			transform: rotate(0deg);
-			right: 110%;
-			opacity: 1;
-		}
-	}
-
-	&-beadtwo {
-		position: absolute;
-		right: 95%;
-		top: -40px;
-		width: 35px;
-		display: none;
-
-		@media(min-width: 768px){
-			right: 110%;
-			top: 70%;
-			width: 70px;
-			display: block;
-		}
-		@media(min-width: 992px){
-			right: 110%;
-			top: 70%;
-			width: 70px;
-			opacity: 0;
-		}
-		img {
-			width: 100%;
-			object-fit: contain;
 		}
 	}
 
@@ -712,7 +644,7 @@ main {
 					top: 15%;
 					right: 0;
 					height: 85%;
-					border: 1px dashed #000;
+					border: 1px dashed $color-blue;
 					opacity: 0.6;
 					display: none;
 
@@ -725,7 +657,7 @@ main {
 		}
 
 		h4 {
-			color: $color-grey;
+			color: $color-blue;
 			font-family: $avant-book;
 			font-size: 16px;
 
@@ -739,8 +671,8 @@ main {
 		}
 	}
 	&-description {
-		color: $color-grey;
-		font-family: $avant-light;
+		color: $color-blue;
+		font-family: $avant-book;
 		font-size: 24px;
 		line-height: 32px;
 		margin-top: -20px;
@@ -750,7 +682,7 @@ main {
 		}
 
 		strong {
-			font-family: $avant-book;
+			font-family: $avant-bold;
 		}
 	}
 	&-blurb {
@@ -768,9 +700,10 @@ main {
 			height: 155px;
 		}
 		span {
-			color: $color-blue;
-			font-family: $avant-light;
+			color: $color-lighterblue;
+			font-family: $avant-bold;
 			font-size: 100px;
+      font-weight: bolder;
 
 			@media(min-width: 768px){
 				font-size: 105px;
@@ -916,12 +849,17 @@ main {
 		}
 	}
 	&-title {
-		font-family: $avant-light;
-		color: #000;
+		font-family: $avant-book;
+		color: $color-blue;
 		text-align: center;
 		margin-bottom: 1.5rem;
 		font-size: 28px;
 		margin-bottom: 80px;
+
+    strong {
+      font-family: $avant-bold;
+    }
+
 		@media(min-width: 768px){
 			font-size: 32px;
 			margin-bottom: 0;
@@ -953,11 +891,24 @@ main {
 		p {
 			color: #000;
 			opacity: 0.4;
-			font-family: $avant-medium;
+			font-family: $avant-bold;
 			transition: all 0.3s ease;
 			text-align: center;
 			font-size: 18px;
 		}
+
+    .product-title {
+      color: #4f657a;
+      font-size: 0.8em;
+      font-weight: bold;
+      max-width: 120px;
+      display: block;
+      margin: 5px auto;
+
+      span {
+        font-weight: 400;
+      }
+    }
 
 
 		&:hover,
@@ -1033,7 +984,7 @@ main {
 		width: 100%;
 		height: auto;
 		position: relative;
-		background-color: #000;
+		background-color: $color-blue;
 		padding: 2.5rem 1.5rem;
 		text-align: center;
 
@@ -1061,7 +1012,7 @@ main {
 		}
 
 		h3 {
-			font-family: $avant-demi;
+			font-family: $avant-bold;
 		}
 		p {
 			font-family: $avant-book;
@@ -1078,7 +1029,7 @@ main {
 				height: 100%;
 				width: 2000px;
 				left: -2000px;
-				background-color: #000;
+				background-color: $color-blue;
 			}
 		}
 		&:last-of-type {
@@ -1089,11 +1040,11 @@ main {
 				height: 100%;
 				width: 2000px;
 				right: -2000px;
-				background-color: $color-grey;
+				background-color: $color-lightblue;
 			}
 		}
 		&.__grey {
-			background-color: $color-grey;
+			background-color: $color-lightblue;
 		}
 	}
 }
@@ -1111,8 +1062,8 @@ main {
 		text-align: center;
 
 		h3 {
-			font-family: $avant-demi;
-			color: #000;
+			font-family: $avant-bold;
+			color: $color-lightblue;
 			margin-bottom: 2.5rem;
 			@media(min-width: 992px){
 				font-size: 30px;
@@ -1131,22 +1082,22 @@ main {
 			li {
 				text-align: left;
 				position: relative;
-				padding-left: 15px;
-				margin-bottom: 10px;
+				padding-left: 18px;
+				margin-bottom: 20px;
 
 				&::before {
-					content: '';
+          content: '';
 					position: absolute;
-					top: 7px;
+					top: 2px;
 					left: 0;
-					width: 5px;
-					height: 5px;
-					border-radius: 50%;
-					background-color: #000;
+					width: 12px;
+					height: 12px;
+          background-image: url(../../src/images/SVG/chevron.svg);
+          background-size: contain;
 				}
 				h4 {
-					font-family: $avant-medium;
-					color: $color-grey;
+					font-family: $avant-bold;
+					color: $color-blue;
 					font-size: 16px;
 					margin-bottom: 4px;
 				}
@@ -1213,7 +1164,7 @@ main {
 .footer {
 	width: 100%;
 	height: auto;
-	background-color: $color-grey;
+	background-color: $color-blue;
 	position: relative;
 	display: flex;
 	align-items: center;

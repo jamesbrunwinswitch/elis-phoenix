@@ -133,7 +133,7 @@ strong {
 		margin: 0 auto;
 	}
 	&-logo {
-		width: 150px;
+		width: 170px;
 		margin: 0 auto 90px auto;
 
 		@media(min-width: 768px){
@@ -152,6 +152,7 @@ strong {
 	&-recycle {
 		width: 130px;
 		margin: 0 auto;
+    margin-left: 15px !important;
 
 		@media(min-width: 768px){
 			margin: 0;
@@ -527,6 +528,7 @@ strong {
 	&-row {
 		display: flex;
 		flex-direction: column-reverse;
+    gap: 30px;
 
 		@media(min-width: 768px){
 			flex-direction: row;
@@ -726,7 +728,7 @@ strong {
 	width: 100%;
 	height: auto;
 	position: relative;
-	padding: 1.5rem 0 0 0;
+	padding: 2.5rem 0 0 0;
 
 	@media(min-width: 992px){
 		padding: 3.5rem 0 0 0;
